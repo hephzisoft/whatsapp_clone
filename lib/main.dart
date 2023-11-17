@@ -1,0 +1,25 @@
+import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'common/utils/theme/app_theme.dart';
+import 'common/widgets/bottom_nav.dart';
+
+void main() {
+  runApp(const App());
+}
+
+class App extends StatelessWidget {
+  const App({super.key});
+
+  @override
+  Widget build(BuildContext context) {
+    return ScreenUtilInit(
+      designSize: const Size(375.0, 812.0),
+      child: MaterialApp(
+          themeMode: ThemeMode.system,
+          darkTheme: AppTheme.darkTheme,
+          debugShowCheckedModeBanner: false,
+          theme: AppTheme.lightTheme,
+          home: const AppBottomNavigation(),),
+    );
+  }
+}
