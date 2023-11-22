@@ -1,0 +1,1 @@
+const profilepics  = 'assets/images/profilepics.jpg';

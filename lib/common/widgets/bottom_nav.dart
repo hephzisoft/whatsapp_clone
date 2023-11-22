@@ -1,7 +1,7 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:whatsapp_clone/common/utils/app_colors.dart';
+import 'package:whatsapp_clone/common/utils/colors/app_colors.dart';
 import 'package:whatsapp_clone/screens/chats/chats_screen.dart';
 
 import '../../screens/calls/call_screen.dart';
@@ -28,69 +28,48 @@ class _AppBottomNavigationState extends State<AppBottomNavigation> {
   Widget build(BuildContext context) {
     return Scaffold(
       body: buildPage(_selectedIndex),
-      bottomNavigationBar: Container(
-        height: 100.h,
-        child: BottomNavigationBar(
-          showSelectedLabels: false,
-          showUnselectedLabels: false,
-          currentIndex: _selectedIndex,
-          type: BottomNavigationBarType.fixed,
-          onTap: _onTapped,
-          items: [
-            BottomNavigationBarItem(
-              icon: bottomNavItem(
-                icon: CupertinoIcons.chat_bubble_2,
-                isActive: false,
-                title: 'Chats',
-              ),
-              activeIcon: bottomNavItem(
-                icon: CupertinoIcons.chat_bubble_2_fill,
-                isActive: true,
-                title: 'Chats',
-              ),
-              label: '',
+      bottomNavigationBar: NavigationBar(
+        onDestinationSelected: _onTapped,
+        selectedIndex: _selectedIndex,
+        indicatorColor:
+            Theme.of(context).colorScheme.brightness == Brightness.light
+                ? lightButtonBackgroundColor
+                : darkButtonBackgroundColor,
+        destinations: const [
+          NavigationDestination(
+            selectedIcon: Badge(
+              child: Icon(CupertinoIcons.chat_bubble_2_fill),
+              label: Text('2'),
             ),
-            BottomNavigationBarItem(
-              icon: bottomNavItem(
-                icon: CupertinoIcons.settings,
-                isActive: false,
-                title: 'Updates',
-              ),
-              activeIcon: bottomNavItem(
-                icon: CupertinoIcons.settings_solid,
-                isActive: true,
-                title: 'Updates',
-              ),
-              label: '',
+            icon: Badge(
+              child: Icon(CupertinoIcons.chat_bubble_2),
+              label: Text('2'),
             ),
-            BottomNavigationBarItem(
-              icon: bottomNavItem(
-                icon: Icons.groups_outlined,
-                isActive: false,
-                title: 'Communities',
-              ),
-              activeIcon: bottomNavItem(
-                icon: Icons.groups,
-                isActive: true,
-                title: 'Communities',
-              ),
-              label: '',
+            label: 'Chats',
+          ),
+          NavigationDestination(
+            selectedIcon: Badge(
+              smallSize: 10,
+              // backgroundColor:Colors.green,
+              child: Icon(CupertinoIcons.settings_solid),
             ),
-            BottomNavigationBarItem(
-              icon: bottomNavItem(
-                icon: CupertinoIcons.phone,
-                isActive: false,
-                title: 'Calls',
-              ),
-              activeIcon: bottomNavItem(
-                icon: CupertinoIcons.phone_solid,
-                isActive: true,
-                title: 'Calls',
-              ),
-              label: '',
+            icon: Badge(
+              smallSize: 10,
+              child: Icon(CupertinoIcons.settings),
             ),
-          ],
-        ),
+            label: 'Updates',
+          ),
+          NavigationDestination(
+            selectedIcon: Icon(Icons.groups),
+            icon: Icon(Icons.groups_outlined),
+            label: 'Communities',
+          ),
+          NavigationDestination(
+            selectedIcon: Icon(CupertinoIcons.phone_solid),
+            icon: Icon(CupertinoIcons.phone),
+            label: 'Home',
+          ),
+        ],
       ),
     );
   }
@@ -104,7 +83,7 @@ class _AppBottomNavigationState extends State<AppBottomNavigation> {
         Container(
           decoration: BoxDecoration(
               color: isActive
-                  ? Theme.of(context).colorScheme.brightness  == Brightness.light
+                  ? Theme.of(context).colorScheme.brightness == Brightness.light
                       ? lightButtonBackgroundColor
                       : darkButtonBackgroundColor
                   : Colors.transparent,
@@ -117,7 +96,7 @@ class _AppBottomNavigationState extends State<AppBottomNavigation> {
                 ? Theme.of(context).colorScheme.brightness == Brightness.light
                     ? darkPrimaryColor
                     : lightPrimaryColor
-                : Theme.of(context).colorScheme.brightness  == Brightness.light
+                : Theme.of(context).colorScheme.brightness == Brightness.light
                     ? darkBackgroundColor
                     : lightBackgroundColor,
           ),
@@ -139,7 +118,7 @@ class _AppBottomNavigationState extends State<AppBottomNavigation> {
 Widget buildPage(int index) {
   switch (index) {
     case 0:
-      return const ChatScreen();
+      return ChatScreen();
     case 1:
       return const UpdatesScreen();
     case 2:
@@ -148,6 +127,6 @@ Widget buildPage(int index) {
       return const CallsScreen();
 
     default:
-      return const ChatScreen();
+      return ChatScreen();
   }
 }

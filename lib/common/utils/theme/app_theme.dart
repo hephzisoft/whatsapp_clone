@@ -1,36 +1,30 @@
 import 'package:flutter/material.dart';
 
-import '../app_colors.dart';
+import '../colors/app_colors.dart';
 import 'text_theme.dart';
 
 class AppTheme {
   static var lightTheme = ThemeData(
     brightness: Brightness.light,
     colorScheme: ColorScheme.fromSeed(
-      seedColor: lightPrimaryColor,
-      background: lightBackgroundColor,
-      brightness: Brightness.light
-    ),
+        seedColor: lightPrimaryColor,
+        background: lightBackgroundColor,
+        brightness: Brightness.light),
     appBarTheme: const AppBarTheme(
       backgroundColor: lightBackgroundColor,
       foregroundColor: darkBackgroundColor,
     ),
     textTheme: AppTextTheme.lightTextTheme,
-    bottomNavigationBarTheme: const BottomNavigationBarThemeData(
-
-      selectedLabelStyle: TextStyle(
-        color: Colors.black,
-      ),
-      unselectedItemColor: Colors.black,
-      selectedIconTheme: IconThemeData(
-        color: Colors.black,
-      ),
+    navigationBarTheme: const NavigationBarThemeData(
+      backgroundColor: lightBackgroundColor,
     ),
   );
-  static var darkTheme = ThemeData(
 
+  static var darkTheme = ThemeData(
+    useMaterial3: true,
     colorScheme: ColorScheme.fromSeed(
       seedColor: darkPrimaryColor,
+      surface: darkBackgroundColor,
       brightness: Brightness.dark,
       background: darkBackgroundColor,
     ),
@@ -39,14 +33,8 @@ class AppTheme {
       foregroundColor: lightBackgroundColor,
       backgroundColor: darkBackgroundColor,
     ),
-    bottomNavigationBarTheme: const BottomNavigationBarThemeData(
-      selectedLabelStyle: TextStyle(
-        color: Colors.white,
-      ),
-      unselectedItemColor: Colors.white,
-      selectedIconTheme: IconThemeData(
-        color: Colors.white,
-      ),
+    navigationBarTheme: const NavigationBarThemeData(
+      backgroundColor: darkBackgroundColor,
     ),
   );
 }
