@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'common/utils/theme/app_theme.dart';
-import 'common/widgets/bottom_nav.dart';
+import 'common/widgets/bottom_nav/bottom_nav.dart';
 
 void main() {
   runApp(const App());

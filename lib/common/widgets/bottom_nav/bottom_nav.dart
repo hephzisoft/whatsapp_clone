@@ -4,9 +4,9 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:whatsapp_clone/common/utils/colors/app_colors.dart';
 import 'package:whatsapp_clone/screens/chats/chats_screen.dart';
 
-import '../../screens/calls/call_screen.dart';
-import '../../screens/communities/communities.dart';
-import '../../screens/updates/updates.dart';
+import '../../../screens/calls/call_screen.dart';
+import '../../../screens/communities/communities.dart';
+import '../../../screens/updates/updates.dart';
 
 class AppBottomNavigation extends StatefulWidget {
   const AppBottomNavigation({super.key});

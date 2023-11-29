@@ -2,6 +2,7 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:whatsapp_clone/common/extension/build_context_extension.dart';
 
 import '../../common/utils/images/image_res.dart';
 import '../../common/widgets/app_bar.dart';
@@ -18,19 +19,19 @@ class ChatScreen extends StatelessWidget {
       appBar: buildAppBar(
         title: Text(
           'WhatsApp',
-          style: Theme.of(context).textTheme.titleLarge,
+          style: context.appTextTheme.titleLarge,
         ),
         actions: [
           IconButton(
             onPressed: () {},
-            icon: Icon(
+            icon: const Icon(
               Icons.camera_alt_outlined,
               size: 30,
             ),
           ),
           IconButton(
             onPressed: () {},
-            icon: Icon(
+            icon: const Icon(
               Icons.search,
               size: 30,
             ),
@@ -58,7 +59,7 @@ class ChatScreen extends StatelessWidget {
       ),
       floatingActionButton: FloatingActionButton(
         onPressed: () {},
-        child: Icon(CupertinoIcons.chat_bubble_fill),
+        child: const Icon(CupertinoIcons.chat_bubble_fill),
       ),
     );
   }

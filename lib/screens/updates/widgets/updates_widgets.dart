@@ -3,11 +3,11 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 import '../../../common/utils/images/image_res.dart';
 
-Widget chatItem() {
+Widget statusItem() {
   return Container(
     padding: const EdgeInsets.symmetric(
-      vertical: 10,
-      horizontal: 20,
+      vertical: 15,
+      horizontal: 5,
     ),
     child: Row(
       children: [
@@ -29,27 +29,11 @@ Widget chatItem() {
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
             Text('DEV XP'),
-            Text('Bug: if you like'),
+            Text('20 minutes ago'),
           ],
         ),
-        const Spacer(),
-        Column(
-          crossAxisAlignment: CrossAxisAlignment.end,
-          children: [
-            const Text('10:20 PM'),
-            Container(
-              padding: const EdgeInsets.all(7),
-              decoration: BoxDecoration(
-                color: Colors.green,
-                borderRadius: BorderRadius.circular(50),
-              ),
-              child: const Text(
-                '100',
-                style: TextStyle(color: Colors.white),
-              ),
-            )
-          ],
-        ),
+
+
       ],
     ),
   );
