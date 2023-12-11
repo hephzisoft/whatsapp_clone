@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "729005215351",
+    "project_id": "com-hephzisoft-whatsapp-clone",
+    "storage_bucket": "com-hephzisoft-whatsapp-clone.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:729005215351:android:b312d6d9fe8dc2cbb4c072",
+        "android_client_info": {
+          "package_name": "com.example.whatsapp_clone"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDl4JzXQ5ErHNAexSZYjyKGnQqp6A7N9bs"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

@@ -8,7 +8,7 @@ class BottomNav extends _$BottomNav {
     return 0;
   }
 
-  // void changeIndex(int value) {
-  //   state = value;
-  // }
+  void changeIndex(int value) {
+    state = value;
+  }
 }
