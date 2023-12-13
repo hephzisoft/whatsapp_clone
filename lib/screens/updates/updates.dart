@@ -136,6 +136,8 @@ class _UpdatesScreenState extends State<UpdatesScreen> {
             ),
             SliverToBoxAdapter(
               child: ExpansionPanelList(
+                elevation: 0,
+                // dividerColor: Colors.transparent,
                 expansionCallback: (index, isExpanded) {
                   setState(() {
                     _item[index].isExpanded = isExpanded;
@@ -144,6 +146,7 @@ class _UpdatesScreenState extends State<UpdatesScreen> {
                 children: _item
                     .map(
                       (item) => ExpansionPanel(
+                        backgroundColor: Colors.transparent,
                         isExpanded: item.isExpanded,
                         headerBuilder: (_, isExpanded) {
                           return ListTile(

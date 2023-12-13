@@ -5,6 +5,8 @@ import 'common/utils/theme/app_theme.dart';
 import 'common/widgets/bottom_nav/bottom_nav.dart';
 
 void main() {
+  WidgetsFlutterBinding.ensureInitialized();
+
   runApp(
     const ProviderScope(
       child: App(),

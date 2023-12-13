@@ -1,12 +1,10 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
-import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:whatsapp_clone/common/extension/build_context_extension.dart';
 import 'package:whatsapp_clone/common/utils/colors/app_colors.dart';
-import 'package:whatsapp_clone/screens/chats/chats_screen.dart';
 
 import '../../../screens/calls/call_screen.dart';
+import '../../../screens/chats_list/chats_list_screen.dart';
 import '../../../screens/communities/communities.dart';
 import '../../../screens/updates/updates.dart';
 import 'controller/bottom_nav_controller.dart';
@@ -70,7 +68,7 @@ class AppBottomNavigation extends ConsumerWidget {
   Widget buildPage(int index) {
     switch (index) {
       case 0:
-        return ChatScreen();
+        return ChatListScreen();
       case 1:
         return const UpdatesScreen();
       case 2:
@@ -79,7 +77,7 @@ class AppBottomNavigation extends ConsumerWidget {
         return const CallsScreen();
 
       default:
-        return ChatScreen();
+        return ChatListScreen();
     }
   }
 }
