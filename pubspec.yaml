@@ -44,6 +44,7 @@ dependencies:
   riverpod_generator: ^2.3.9
   firebase_core: ^2.24.2
   firebase_auth: ^4.15.2
+  fdottedline_nullsafety: ^2.0.1
 
 dev_dependencies:
   flutter_test:

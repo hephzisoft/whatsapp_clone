@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:google_fonts/google_fonts.dart';
+import 'package:fdottedline_nullsafety/fdottedline__nullsafety.dart';
 import 'package:whatsapp_clone/common/extension/build_context_extension.dart';
 
 import '../../common/utils/images/image_res.dart';
@@ -136,6 +136,7 @@ class _UpdatesScreenState extends State<UpdatesScreen> {
             ),
             SliverToBoxAdapter(
               child: ExpansionPanelList(
+                dividerColor: Colors.transparent,
                 elevation: 0,
                 // dividerColor: Colors.transparent,
                 expansionCallback: (index, isExpanded) {

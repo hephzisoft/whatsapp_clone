@@ -1,7 +1,10 @@
+
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
+import '../../../common/utils/colors/app_colors.dart';
 import '../../../common/utils/images/image_res.dart';
+import 'update_status.dart';
 
 Widget statusItem() {
   return Container(
@@ -12,13 +15,26 @@ Widget statusItem() {
     child: Row(
       children: [
         GestureDetector(
-          child: ClipRRect(
-            borderRadius: BorderRadius.circular(50),
-            child: Image.asset(
-              profilepics,
-              fit: BoxFit.cover,
-              width: 50.w,
-              height: 50.w,
+          child: Padding(
+            padding: const EdgeInsets.all(8.0),
+            child: CircularBorder(
+              borderColor: darkPrimaryColor,
+              
+              
+              borderWidth: 3,
+              
+              radius: 35,
+              numSegments:10,
+              spacing: 8,
+              child: ClipRRect(
+                borderRadius: BorderRadius.circular(50),
+                child: Image.asset(
+                  profilepics,
+                  fit: BoxFit.cover,
+                  width: 50.w,
+                  height: 50.w,
+                ),
+              ),
             ),
           ),
         ),
@@ -32,8 +48,6 @@ Widget statusItem() {
             Text('20 minutes ago'),
           ],
         ),
-
-
       ],
     ),
   );
